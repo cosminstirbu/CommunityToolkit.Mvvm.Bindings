@@ -27,7 +27,6 @@ namespace CommunityToolkit.Mvvm.Bindings;
 /// <summary>
 /// Defines extension methods for Android only.
 /// </summary>
-////[ClassInfo(typeof(Binding))]
 public static class ExtensionsAndroid
 {
     internal static string GetDefaultEventNameForControl(this Type type)

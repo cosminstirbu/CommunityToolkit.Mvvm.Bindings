@@ -18,7 +18,6 @@ namespace CommunityToolkit.Mvvm.Bindings;
 /// <summary>
 /// Defines how a <see cref="Binding"/> is updated by a source control.
 /// </summary>
-////[ClassInfo(typeof(Binding))]
 public enum UpdateTriggerMode
 {
     /// <summary>

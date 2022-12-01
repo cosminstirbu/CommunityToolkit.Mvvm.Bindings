@@ -26,7 +26,6 @@ namespace System.Windows;
 /// "weak event listener" pattern to attach listeners
 /// for the <see cref="PropertyChanged" /> event. 
 /// </summary>
-////[ClassInfo(typeof(Binding))]
 public class PropertyChangedEventManager
 {
     private static PropertyChangedEventManager _manager;

@@ -24,12 +24,6 @@ namespace CommunityToolkit.Mvvm.Bindings;
 /// Stores an <see cref="Action" /> without causing a hard reference
 /// to be created to the Action's owner. The owner can be garbage collected at any time.
 /// </summary>
-////[ClassInfo(typeof(WeakAction),
-////    VersionString = "5.4.18",
-////    DateString = "201708281410",
-////    Description = "A class allowing to store and invoke actions without keeping a hard reference to the action's target.",
-////    UrlContacts = "http://www.galasoft.ch/contact_en.html",
-////    Email = "laurent@galasoft.ch")]
 public class WeakAction
 {
 #if SILVERLIGHT

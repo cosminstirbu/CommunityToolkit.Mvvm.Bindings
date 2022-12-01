@@ -34,7 +34,6 @@ namespace CommunityToolkit.Mvvm.Bindings;
 /// is not the same as the target type, an automatic conversion will be attempted. However only
 /// simple types can be converted. For more complex conversions, use the <see cref="ConvertSourceToTarget"/>
 /// and <see cref="ConvertTargetToSource"/> methods to define custom converters.</typeparam>
-////[ClassInfo(typeof(Binding))]
 public partial class Binding<TSource, TTarget> : Binding
 {
     private readonly SimpleConverter _converter = new SimpleConverter();

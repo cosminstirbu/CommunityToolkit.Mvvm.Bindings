@@ -18,14 +18,8 @@ using System;
 namespace CommunityToolkit.Mvvm.Bindings;
 
 /// <summary>
-/// Base class for bindings in Xamarin.iOS and Xamarin.Android.
+/// Base class for bindings in .NET for iOS and .NET for Android.
 /// </summary>
-////[ClassInfo(typeof(Binding),
-////    VersionString = "5.4.4",
-////    DateString = "201801022330",
-////    Description = "Base class for bindings in Xamarin.iOS and Xamarin.Android",
-////    UrlContacts = "http://www.galasoft.ch/contact_en.html",
-////    Email = "laurent@galasoft.ch")]
 public abstract class Binding
 {
     /// <summary>

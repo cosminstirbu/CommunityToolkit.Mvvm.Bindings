@@ -18,7 +18,6 @@ namespace CommunityToolkit.Mvvm.Bindings;
 /// <summary>
 /// The mode of the <see cref="Binding{TSource, TTarget}"/>.
 /// </summary>
-////[ClassInfo(typeof(Binding))]
 public enum BindingMode
 {
     /// <summary>

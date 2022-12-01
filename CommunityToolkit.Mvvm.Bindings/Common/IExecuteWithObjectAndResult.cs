@@ -20,7 +20,6 @@ namespace CommunityToolkit.Mvvm.Bindings;
 /// useful if you store multiple WeakFunc{T} instances but don't know in advance
 /// what type T represents.
 /// </summary>
-////[ClassInfo(typeof(WeakAction))]
 public interface IExecuteWithObjectAndResult
 {
     /// <summary>

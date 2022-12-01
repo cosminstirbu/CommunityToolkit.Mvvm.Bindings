@@ -22,7 +22,6 @@ namespace System.Windows;
 /// Provides event listening support for classes that expect to receive events 
 /// through the WeakEvent pattern and a WeakEventManager.
 /// </summary>
-////[ClassInfo(typeof(Binding))]
 public interface IWeakEventListener
 {
     /// <summary>

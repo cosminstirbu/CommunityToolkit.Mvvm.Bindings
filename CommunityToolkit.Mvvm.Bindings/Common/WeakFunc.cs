@@ -25,7 +25,6 @@ namespace CommunityToolkit.Mvvm.Bindings;
 /// </summary>
 /// <typeparam name="TResult">The type of the result of the Func that will be stored
 /// by this weak reference.</typeparam>
-////[ClassInfo(typeof(WeakAction)]
 public class WeakFunc<TResult>
 {
 #if SILVERLIGHT

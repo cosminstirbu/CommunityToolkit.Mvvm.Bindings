@@ -25,7 +25,6 @@ namespace CommunityToolkit.Mvvm.Bindings;
 /// Defines extension methods used to add data bindings and commands between Xamarin
 /// Android and iOS elements.
 /// </summary>
-////[ClassInfo(typeof(Binding))]
 public static class Extensions
 {
     /// <summary>

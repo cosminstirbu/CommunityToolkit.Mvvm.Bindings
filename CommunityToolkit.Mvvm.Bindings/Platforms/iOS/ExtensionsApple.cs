@@ -27,7 +27,6 @@ namespace CommunityToolkit.Mvvm.Bindings;
 /// <summary>
 /// Defines extension methods for iOS only.
 /// </summary>
-////[ClassInfo(typeof(Binding))]
 public static class ExtensionsApple
 {
     internal static string GetDefaultEventNameForControl(this Type type)

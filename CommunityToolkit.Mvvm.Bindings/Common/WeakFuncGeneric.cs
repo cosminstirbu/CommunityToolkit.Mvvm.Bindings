@@ -28,7 +28,6 @@ namespace CommunityToolkit.Mvvm.Bindings;
 /// </summary>
 /// <typeparam name="T">The type of the Func's parameter.</typeparam>
 /// <typeparam name="TResult">The type of the Func's return value.</typeparam>
-////[ClassInfo(typeof(WeakAction))]
 public class WeakFunc<T, TResult> : WeakFunc<TResult>, IExecuteWithObjectAndResult
 {
 #if SILVERLIGHT
