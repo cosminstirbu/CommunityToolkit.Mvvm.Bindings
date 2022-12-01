@@ -22,89 +22,88 @@ using Foundation;
 using Microsoft.Toolkit.Mvvm.Input;
 using UIKit;
 
-namespace GalaSoft.MvvmLight.Helpers
+namespace GalaSoft.MvvmLight.Helpers;
+
+/// <summary>
+/// Defines extension methods for iOS only.
+/// </summary>
+////[ClassInfo(typeof(Binding))]
+public static class ExtensionsApple
 {
-    /// <summary>
-    /// Defines extension methods for iOS only.
-    /// </summary>
-    ////[ClassInfo(typeof(Binding))]
-    public static class ExtensionsApple
+    internal static string GetDefaultEventNameForControl(this Type type)
     {
-        internal static string GetDefaultEventNameForControl(this Type type)
-        {
-            string eventName = null;
+        string eventName = null;
 
-            if (type == typeof (UIButton)
-                || typeof (UIButton).IsAssignableFrom(type))
+        if (type == typeof (UIButton)
+            || typeof (UIButton).IsAssignableFrom(type))
+        {
+            eventName = "TouchUpInside";
+        }
+        else if (type == typeof (UIBarButtonItem)
+                 || typeof (UIBarButtonItem).IsAssignableFrom(type))
+        {
+            eventName = "Clicked";
+        }
+        else if (type == typeof (UISwitch)
+                 || typeof (UISwitch).IsAssignableFrom(type))
+        {
+            eventName = "ValueChanged";
+        }
+
+        return eventName;
+    }
+
+
+    internal static Delegate GetCommandHandler(
+        this EventInfo info,
+        string eventName,
+        Type elementType,
+        ICommand command)
+    {
+        // At the moment, all supported controls with default events
+        // in iOS are using EventHandler, and not EventHandler<...>.
+
+        EventHandler handler = (s, args) =>
+        {
+            if (command.CanExecute(null))
             {
-                eventName = "TouchUpInside";
+                command.Execute(null);
             }
-            else if (type == typeof (UIBarButtonItem)
-                     || typeof (UIBarButtonItem).IsAssignableFrom(type))
-            {
-                eventName = "Clicked";
-            }
-            else if (type == typeof (UISwitch)
-                     || typeof (UISwitch).IsAssignableFrom(type))
-            {
-                eventName = "ValueChanged";
-            }
+        };
 
-            return eventName;
-        }
+        return handler;
+    }
 
+    internal static Delegate GetCommandHandler<T>(
+        this EventInfo info,
+        string eventName,
+        Type elementType,
+        RelayCommand<T> command,
+        Binding<T, T> castedBinding)
+    {
+        // At the moment, all supported controls with default events
+        // in iOS are using EventHandler, and not EventHandler<...>.
 
-        internal static Delegate GetCommandHandler(
-            this EventInfo info,
-            string eventName,
-            Type elementType,
-            ICommand command)
+        EventHandler handler = (s, args) =>
         {
-            // At the moment, all supported controls with default events
-            // in iOS are using EventHandler, and not EventHandler<...>.
+            var param = castedBinding == null ? default(T) : castedBinding.Value;
+            command.Execute(param);
+        };
 
-            EventHandler handler = (s, args) =>
-            {
-                if (command.CanExecute(null))
-                {
-                    command.Execute(null);
-                }
-            };
+        return handler;
+    }
 
-            return handler;
-        }
+    internal static Delegate GetCommandHandler<T>(
+        this EventInfo info,
+        string eventName,
+        Type elementType,
+        RelayCommand<T> command,
+        T commandParameter)
+    {
+        // At the moment, all supported controls with default events
+        // in iOS are using EventHandler, and not EventHandler<...>.
 
-        internal static Delegate GetCommandHandler<T>(
-            this EventInfo info,
-            string eventName,
-            Type elementType,
-            RelayCommand<T> command,
-            Binding<T, T> castedBinding)
-        {
-            // At the moment, all supported controls with default events
-            // in iOS are using EventHandler, and not EventHandler<...>.
-
-            EventHandler handler = (s, args) =>
-            {
-                var param = castedBinding == null ? default(T) : castedBinding.Value;
-                command.Execute(param);
-            };
-
-            return handler;
-        }
-
-        internal static Delegate GetCommandHandler<T>(
-            this EventInfo info,
-            string eventName,
-            Type elementType,
-            RelayCommand<T> command,
-            T commandParameter)
-        {
-            // At the moment, all supported controls with default events
-            // in iOS are using EventHandler, and not EventHandler<...>.
-
-            EventHandler handler = (s, args) => command.Execute(commandParameter);
-            return handler;
-        }
+        EventHandler handler = (s, args) => command.Execute(commandParameter);
+        return handler;
     }
 }

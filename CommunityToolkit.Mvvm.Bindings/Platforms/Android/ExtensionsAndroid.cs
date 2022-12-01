@@ -22,125 +22,124 @@ using Android.Views;
 using Android.Widget;
 using Microsoft.Toolkit.Mvvm.Input;
 
-namespace GalaSoft.MvvmLight.Helpers
+namespace GalaSoft.MvvmLight.Helpers;
+
+/// <summary>
+/// Defines extension methods for Android only.
+/// </summary>
+////[ClassInfo(typeof(Binding))]
+public static class ExtensionsAndroid
 {
-    /// <summary>
-    /// Defines extension methods for Android only.
-    /// </summary>
-    ////[ClassInfo(typeof(Binding))]
-    public static class ExtensionsAndroid
+    internal static string GetDefaultEventNameForControl(this Type type)
     {
-        internal static string GetDefaultEventNameForControl(this Type type)
+        string eventName = null;
+
+        if (type == typeof (CheckBox)
+            || typeof (CheckBox).IsAssignableFrom(type))
         {
-            string eventName = null;
-
-            if (type == typeof (CheckBox)
-                || typeof (CheckBox).IsAssignableFrom(type))
-            {
-                eventName = "CheckedChange";
-            }
-            else if (type == typeof (Button)
-                     || typeof (Button).IsAssignableFrom(type))
-            {
-                eventName = "Click";
-            }
-
-            return eventName;
+            eventName = "CheckedChange";
+        }
+        else if (type == typeof (Button)
+                 || typeof (Button).IsAssignableFrom(type))
+        {
+            eventName = "Click";
         }
 
-        internal static Delegate GetCommandHandler(
-            this EventInfo info,
-            string eventName, 
-            Type elementType, 
-            ICommand command)
+        return eventName;
+    }
+
+    internal static Delegate GetCommandHandler(
+        this EventInfo info,
+        string eventName, 
+        Type elementType, 
+        ICommand command)
+    {
+        Delegate result;
+
+        if (string.IsNullOrEmpty(eventName)
+            && elementType == typeof (CheckBox))
         {
-            Delegate result;
-
-            if (string.IsNullOrEmpty(eventName)
-                && elementType == typeof (CheckBox))
+            EventHandler<CompoundButton.CheckedChangeEventArgs> handler = (s, args) =>
             {
-                EventHandler<CompoundButton.CheckedChangeEventArgs> handler = (s, args) =>
+                if (command.CanExecute(null))
                 {
-                    if (command.CanExecute(null))
-                    {
-                        command.Execute(null);
-                    }
-                };
+                    command.Execute(null);
+                }
+            };
 
-                result = handler;
-            }
-            else
+            result = handler;
+        }
+        else
+        {
+            EventHandler handler = (s, args) =>
             {
-                EventHandler handler = (s, args) =>
+                if (command.CanExecute(null))
                 {
-                    if (command.CanExecute(null))
-                    {
-                        command.Execute(null);
-                    }
-                };
+                    command.Execute(null);
+                }
+            };
 
-                result = handler;
-            }
-
-            return result;
+            result = handler;
         }
 
-        internal static Delegate GetCommandHandler<T>(
-            this EventInfo info,
-            string eventName,
-            Type elementType,
-            RelayCommand<T> command,
-            Binding<T, T> castedBinding)
+        return result;
+    }
+
+    internal static Delegate GetCommandHandler<T>(
+        this EventInfo info,
+        string eventName,
+        Type elementType,
+        RelayCommand<T> command,
+        Binding<T, T> castedBinding)
+    {
+        Delegate result;
+
+        if (string.IsNullOrEmpty(eventName)
+            && elementType == typeof(CheckBox))
         {
-            Delegate result;
-
-            if (string.IsNullOrEmpty(eventName)
-                && elementType == typeof(CheckBox))
+            EventHandler<CompoundButton.CheckedChangeEventArgs> handler = (s, args) =>
             {
-                EventHandler<CompoundButton.CheckedChangeEventArgs> handler = (s, args) =>
-                {
-                    var param = castedBinding == null ? default(T) : castedBinding.Value;
-                    command.Execute(param);
-                };
+                var param = castedBinding == null ? default(T) : castedBinding.Value;
+                command.Execute(param);
+            };
 
-                result = handler;
-            }
-            else
+            result = handler;
+        }
+        else
+        {
+            EventHandler handler = (s, args) =>
             {
-                EventHandler handler = (s, args) =>
-                {
-                    var param = castedBinding == null ? default(T) : castedBinding.Value;
-                    command.Execute(param);
-                };
+                var param = castedBinding == null ? default(T) : castedBinding.Value;
+                command.Execute(param);
+            };
 
-                result = handler;
-            }
-
-            return result;
+            result = handler;
         }
 
-        internal static Delegate GetCommandHandler<T>(
-            this EventInfo info,
-            string eventName,
-            Type elementType,
-            RelayCommand<T> command,
-            T commandParameter)
+        return result;
+    }
+
+    internal static Delegate GetCommandHandler<T>(
+        this EventInfo info,
+        string eventName,
+        Type elementType,
+        RelayCommand<T> command,
+        T commandParameter)
+    {
+        Delegate result;
+
+        if (string.IsNullOrEmpty(eventName)
+            && elementType == typeof(CheckBox))
         {
-            Delegate result;
-
-            if (string.IsNullOrEmpty(eventName)
-                && elementType == typeof(CheckBox))
-            {
-                EventHandler<CompoundButton.CheckedChangeEventArgs> handler = (s, args) => command.Execute(commandParameter);
-                result = handler;
-            }
-            else
-            {
-                EventHandler handler = (s, args) => command.Execute(commandParameter);
-                result = handler;
-            }
-
-            return result;
+            EventHandler<CompoundButton.CheckedChangeEventArgs> handler = (s, args) => command.Execute(commandParameter);
+            result = handler;
         }
+        else
+        {
+            EventHandler handler = (s, args) => command.Execute(commandParameter);
+            result = handler;
+        }
+
+        return result;
     }
 }

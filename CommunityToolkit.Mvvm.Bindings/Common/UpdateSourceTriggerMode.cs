@@ -1,6 +1,6 @@
 // ****************************************************************************
 // <copyright file="UpdateTriggerMode.cs" company="GalaSoft Laurent Bugnion">
-// Copyright © GalaSoft Laurent Bugnion 2009-2016
+// Copyright ï¿½ GalaSoft Laurent Bugnion 2009-2016
 // </copyright>
 // ****************************************************************************
 // <author>Laurent Bugnion</author>
@@ -13,24 +13,23 @@
 // </license>
 // ****************************************************************************
 
-namespace GalaSoft.MvvmLight.Helpers
+namespace GalaSoft.MvvmLight.Helpers;
+
+/// <summary>
+/// Defines how a <see cref="Binding"/> is updated by a source control.
+/// </summary>
+////[ClassInfo(typeof(Binding))]
+public enum UpdateTriggerMode
 {
     /// <summary>
-    /// Defines how a <see cref="Binding"/> is updated by a source control.
+    /// Defines that the binding should be updated when the control
+    /// loses the focus.
     /// </summary>
-    ////[ClassInfo(typeof(Binding))]
-    public enum UpdateTriggerMode
-    {
-        /// <summary>
-        /// Defines that the binding should be updated when the control
-        /// loses the focus.
-        /// </summary>
-        LostFocus,
+    LostFocus,
 
-        /// <summary>
-        /// Defines that the binding should be updated when the control's 
-        /// bound property changes.
-        /// </summary>
-        PropertyChanged
-    }
+    /// <summary>
+    /// Defines that the binding should be updated when the control's 
+    /// bound property changes.
+    /// </summary>
+    PropertyChanged
 }
