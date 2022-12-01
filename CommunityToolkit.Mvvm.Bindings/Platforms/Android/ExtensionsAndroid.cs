@@ -20,7 +20,7 @@ using System.Reflection;
 using System.Windows.Input;
 using Android.Views;
 using Android.Widget;
-using Microsoft.Toolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Input;
 
 namespace CommunityToolkit.Mvvm.Bindings;
 

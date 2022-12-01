@@ -18,8 +18,8 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Reflection;
 using System.Windows.Input;
+using CommunityToolkit.Mvvm.Input;
 using Foundation;
-using Microsoft.Toolkit.Mvvm.Input;
 using UIKit;
 
 namespace CommunityToolkit.Mvvm.Bindings;

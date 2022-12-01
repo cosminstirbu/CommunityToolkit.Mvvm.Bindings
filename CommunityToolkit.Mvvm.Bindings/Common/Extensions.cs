@@ -17,7 +17,7 @@ using System;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Windows.Input;
-using Microsoft.Toolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Input;
 
 namespace CommunityToolkit.Mvvm.Bindings;
 
