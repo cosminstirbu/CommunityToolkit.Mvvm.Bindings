@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1704.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunityToolkit.Mvvm.Bindings", "CommunityToolkit.Mvvm.Bindings\CommunityToolkit.Mvvm.Bindings.csproj", "{48355FBB-D0C9-415C-AE2D-1AFB2260C4DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48355FBB-D0C9-415C-AE2D-1AFB2260C4DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48355FBB-D0C9-415C-AE2D-1AFB2260C4DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48355FBB-D0C9-415C-AE2D-1AFB2260C4DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48355FBB-D0C9-415C-AE2D-1AFB2260C4DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {860E8A70-D853-4816-937F-7972E54C7B5F}
+	EndGlobalSection
+EndGlobal
