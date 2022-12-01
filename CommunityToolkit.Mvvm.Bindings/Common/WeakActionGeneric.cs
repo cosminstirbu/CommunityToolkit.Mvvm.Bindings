@@ -20,7 +20,7 @@ using System.Reflection;
 
 // ReSharper restore RedundantUsingDirective
 
-namespace GalaSoft.MvvmLight.Helpers;
+namespace CommunityToolkit.Mvvm.Bindings;
 
 /// <summary>
 /// Stores an Action without causing a hard reference

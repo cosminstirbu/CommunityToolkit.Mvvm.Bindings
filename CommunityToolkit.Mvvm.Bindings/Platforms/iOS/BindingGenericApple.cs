@@ -16,7 +16,7 @@
 using System;
 using UIKit;
 
-namespace GalaSoft.MvvmLight.Helpers;
+namespace CommunityToolkit.Mvvm.Bindings;
 
 // Partial class for Apple only.
 public partial class Binding<TSource, TTarget>

@@ -18,7 +18,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 
-namespace GalaSoft.MvvmLight.Helpers;
+namespace CommunityToolkit.Mvvm.Bindings;
 
 /// <summary>
 /// Stores an <see cref="Action" /> without causing a hard reference

@@ -13,7 +13,7 @@
 // </license>
 // ****************************************************************************
 
-namespace GalaSoft.MvvmLight.Helpers;
+namespace CommunityToolkit.Mvvm.Bindings;
 
 /// <summary>
 /// The mode of the <see cref="Binding{TSource, TTarget}"/>.

@@ -19,7 +19,7 @@ using System.Reflection;
 using System.Windows.Input;
 using Microsoft.Toolkit.Mvvm.Input;
 
-namespace GalaSoft.MvvmLight.Helpers;
+namespace CommunityToolkit.Mvvm.Bindings;
 
 /// <summary>
 /// Defines extension methods used to add data bindings and commands between Xamarin

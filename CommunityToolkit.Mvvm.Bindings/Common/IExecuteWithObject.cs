@@ -13,7 +13,7 @@
 // </license>
 // ****************************************************************************
 
-namespace GalaSoft.MvvmLight.Helpers;
+namespace CommunityToolkit.Mvvm.Bindings;
 
 /// <summary>
 /// This interface is meant for the <see cref="WeakAction{T}" /> class and can be 

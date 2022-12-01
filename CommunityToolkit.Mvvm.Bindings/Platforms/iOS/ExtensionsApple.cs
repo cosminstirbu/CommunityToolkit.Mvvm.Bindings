@@ -22,7 +22,7 @@ using Foundation;
 using Microsoft.Toolkit.Mvvm.Input;
 using UIKit;
 
-namespace GalaSoft.MvvmLight.Helpers;
+namespace CommunityToolkit.Mvvm.Bindings;
 
 /// <summary>
 /// Defines extension methods for iOS only.

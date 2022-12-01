@@ -22,7 +22,7 @@ using Android.Views;
 using Android.Widget;
 using Microsoft.Toolkit.Mvvm.Input;
 
-namespace GalaSoft.MvvmLight.Helpers;
+namespace CommunityToolkit.Mvvm.Bindings;
 
 /// <summary>
 /// Defines extension methods for Android only.

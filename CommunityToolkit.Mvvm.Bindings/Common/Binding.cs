@@ -15,7 +15,7 @@
 
 using System;
 
-namespace GalaSoft.MvvmLight.Helpers;
+namespace CommunityToolkit.Mvvm.Bindings;
 
 /// <summary>
 /// Base class for bindings in Xamarin.iOS and Xamarin.Android.

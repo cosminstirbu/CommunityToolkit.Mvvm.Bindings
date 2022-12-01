@@ -18,7 +18,7 @@ using Android.Text;
 using Android.Views;
 using Android.Widget;
 
-namespace GalaSoft.MvvmLight.Helpers;
+namespace CommunityToolkit.Mvvm.Bindings;
 
 // Partial class for Android only.
 public partial class Binding<TSource, TTarget>

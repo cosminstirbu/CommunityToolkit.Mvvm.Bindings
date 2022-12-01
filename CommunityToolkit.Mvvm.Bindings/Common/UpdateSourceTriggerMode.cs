@@ -13,7 +13,7 @@
 // </license>
 // ****************************************************************************
 
-namespace GalaSoft.MvvmLight.Helpers;
+namespace CommunityToolkit.Mvvm.Bindings;
 
 /// <summary>
 /// Defines how a <see cref="Binding"/> is updated by a source control.

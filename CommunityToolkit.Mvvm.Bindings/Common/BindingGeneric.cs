@@ -21,7 +21,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Windows;
 
-namespace GalaSoft.MvvmLight.Helpers;
+namespace CommunityToolkit.Mvvm.Bindings;
 
 /// <summary>
 /// Creates a binding between two properties. If the source implements INotifyPropertyChanged, the source property raises the PropertyChanged event
