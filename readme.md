@@ -10,6 +10,8 @@ This project copied the original source code from [MVVM Light Toolkit](https://g
 >
 > If you want to use this project you can simply download the source code and add it to your .sln as an additional project. This is also how we use it internally in our company.
 >
+> You can find a sample application using the bindings [here](https://github.com/FortechRomania/xamarin-training-sample-app).
+>
 > If you'd like this to be adopted by the team running the official [.NET Community Toolkit](https://github.com/CommunityToolkit/dotnet) then please engage with this issue [MVVM Bindings for .NET iOS and .NET Android](https://github.com/CommunityToolkit/dotnet/issues/363).
 
 ## License
